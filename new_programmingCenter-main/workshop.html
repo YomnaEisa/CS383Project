@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<title>Programming center - WorkShpos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" />
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <style>
+
+/*
+
+colors used
+drak grey: #1A1E23
+white: #fff
+red:  #FF1847
+
+
+*/  
+
+  
+
+body {
+  background: #1#fff; /*background dark grey */
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+nav {
+  position: relative;
+  padding-bottom: 12px;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+
+nav .line {
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  margin: 10px 0 0 0; 
+  background: #e39026;  /*nav underline color*/
+  
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+nav ul li {
+  margin: 0 40px 0 0;
+  opacity: 0.7;
+  transition: all 0.4s ease;
+}
+nav ul li:hover {
+  opacity: 0.7; 
+}
+nav ul li.active {
+  opacity: 1;
+}
+nav ul li:last-child {
+  margin-right: 0;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #1A1E23;                     /* font color for nav - white*/ 
+  text-transform: uppercase;
+  display: block;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  font-size: 14px;
+}
+
+h2{
+  text-decoration: none;
+  color: #1A1E23;                     /* font color for nav - white*/ 
+  text-transform: uppercase;
+  display: block;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  font-size: 14px;
+}
+
+
+h2, button, #clearinput{
+  text-decoration: none;
+  color: #1A1E23;                     /* font color for nav - white*/ 
+  display: block;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+}
+
+
+body {
+/*  display: flex;
+  justify-content: center;
+  align-items: center;*/
+  min-height: 100vh;
+}
+
+/*toggle forms */
+form {
+ padding: 15px; 
+  background: #fff;
+  display: none;
+}
+
+#addworkshopformButton{
+  display: block;
+}
+  </style>
+
+<body>
+
+<?php
+         include 'user.php';
+?>
+<nav class="w3-topnav">
+    <ul>
+      <li class="active"><a href="">HOME</a></li>
+      <li><a href="">WORKSHOP</a></li>
+      <li><a href="">RESOURCES</a></li>
+      <li><a href="#aboutus">ABOUT US</a></li>
+    </ul>
+  </nav>
+</ul>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+ //not for nav. for form in workshop
+ 
+ $(document).ready(function() {
+  $("#addworkshopformButton").click(function() {
+    $("#form1").toggle();
+  });
+});
+
+ $(document).ready(function() {
+  $("#addtrainingformButton").click(function() {
+    $("#form2").toggle();
+  });
+});
+
+
+ $(document).ready(function() {
+  $("#addlectuermButton").click(function() {
+    $("#form3").toggle();
+  });
+});
+ //not for nav. for form in workshop
+
+ var nav = $('nav');
+ var line = $('<div />').addClass('line');
+
+ line.appendTo(nav);
+
+  var active = nav.find('.active');
+  var pos = 0;
+  var wid = 0;
+
+  if(active.length) {
+  pos = active.position().left;
+  wid = active.width();
+  line.css({
+    left: pos,
+    width: wid
+  });
+  }
+
+  nav.find('ul li a').click(function(e) {
+  e.preventDefault();
+  if(!$(this).parent().hasClass('active') && !nav.hasClass('animate')) {
+
+    nav.addClass('animate');
+
+    var _this = $(this);
+
+    nav.find('ul li').removeClass('active');
+
+    var position = _this.parent().position();
+    var width = _this.parent().width();
+
+    if(position.left >= pos) {
+      line.animate({
+        width: ((position.left - pos) + width)
+      }, 300, function() {
+        line.animate({
+          width: width,
+          left: position.left
+        }, 150, function() {
+          nav.removeClass('animate');
+        });
+        _this.parent().addClass('active');
+      });
+    } else {
+      line.animate({
+        left: position.left,
+        width: ((pos - position.left) + wid)
+      }, 300, function() {
+        line.animate({
+          width: width
+        }, 150, function() {
+          nav.removeClass('animate');
+        });
+        _this.parent().addClass('active');
+      });
+    }
+
+    pos = position.left;
+    wid = width;
+   }
+   });
+   
+  
+</script>
+<header>
+
+<br>
+<br>
+<br><!--replace this later with CSS panel/margin or padding, having this many br doesnt feel right -->
+
+<h2>workshops</h2>
+<button><a href="workshopRecords.php" id="deleteworkshop1" name="deleteworkshop1" >EDIT</a></button>
+<br>
+
+<!--form to add workshop -->
+<button type="button" id="addworkshopformButton">+</button>
+
+<form id="form1" action="workshop_add.php" method = "POST">
+  <b>Workshop title:</b> <input type="text" name="title">
+  <br><br>
+  <b>workshop details: </b><input type="text" name="detail">
+  <br><br>
+  <b>presenter's name: </b><input type="text" name="username">
+  <br><br>
+  <b>Date: </b><input type="date" name="date_">
+  <br><br>
+  <b>Time: </b><input type="time" name="time_">
+  <br><br>
+  <b>place: </b><input type="text" name="place">
+  <br><br>
+  <button type="submit" name="submit" value="Add">submit</button>
+  <br><br>
+ <input id = "clearinput" type = "reset" value = "Clear" />
+</form>
+<!--form to add workshop -->
+
+<nav>
+
+
+
+<!------- onclick="javascript: return confirm('Are you SURE you wish to do this?');" --------->
+
+
+</nav>
+
+
+<!--------------------------------------------------------------------------------->
+
+<div class="container">
+
+  <div class="card-columns">
+
+
+    <div class="card bg-light">
+    <div class="card-body text-center">
+     <p class="card-text">title: introduction to robotics <br>
+detail: learn about the basics of robotics <br>
+presenter: Dr. leylah <br>
+date: 2021-12-07 <br>
+time: 13:15:00 <br>
+place: YUC-F</p>
+    </div>
+  </div>
+  <div class="card bg-light">
+      <div class="card-body text-center">
+        <p class="card-text">title: Python Programming <br>
+         detail: basics of python <br>
+         presenter: Dr. kajal <br>
+         date: 2022-01-08 <br>
+         time: 10:15:00 <br>
+         place: Online</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--------------------------------------------------------------------------------->
+
+<hr>
+<h2>training programs</h2>
+<button><a href="workshopRecords.php" id="deleteworkshop1" name="deleteworkshop1" >EDIT</a></button>
+<br>
+ 
+<!--form to add training programs -->
+<button type="button" id="addtrainingformButton">+</button>
+<br>
+<form id="form2" action = "" method = "POST">
+  <b>training programs title:</b> <input type="text" name="title">
+  <br><br>
+  <b>training programs details: </b><input type="text" name="detail">
+  <br><br>
+  <b>presenter's name: </b><input type="text" name="presenter">
+  <br><br>
+  <b>Date: </b><input type="date" name="date_">
+  <br><br>
+  <b>Time: </b><input type="time" name="time_">
+  <br><br>
+  <b>place: </b><input type="text" name="place">
+  <br><br>
+  <button type="submit" name="submit" value="Add">submit</button>
+  <br><br>
+ <input id = "clearinput" type = "reset" value = "Clear" />
+ </form>
+ 
+ 
+ 
+ <!--------------------------------------------------------------------------------->
+
+<div class="container">
+
+  <div class="card-columns">
+
+
+    <div class="card bg-light">
+    <div class="card-body text-center">
+      <p class="card-text">title: introduction to robotics <br>
+detail: learn about the basics of robotics <br>
+presenter: Dr. leylah <br>
+date: 2021-12-07 <br>
+time: 13:15:00 <br>
+place: YUC-F</p>
+    </div>
+  </div>
+  <div class="card bg-light">
+      <div class="card-body text-center">
+        <p class="card-text">title: Python Programming <br>
+         detail: basics of python <br>
+         presenter: Dr. kajal <br>
+         date: 2022-01-08 <br>
+         time: 10:15:00 <br>
+         place: Online</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--------------------------------------------------------------------------------->
+
+<!--form to add training programs -->
+
+<!--
+<nav>
+<ul>
+<li>item 1<button type="button" id="deletetraining1">Delete</button></li>
+<li>item 2<button type="button" id="deletetraining2">Delete</button></li>
+<li>item 3<button type="button" id="deletetraining3">Delete</button></li>
+</ul>
+</nav>
+-->
+
+<hr>
+
+<!--form to add lectuer programs -->
+<h2>lectuers</h2>
+<button><a href="workshopRecords.php" id="deleteworkshop1" name="deleteworkshop1" >EDIT</a></button>
+<br>
+<button type="button" id="addlectuermButton">+</button>
+
+<form id="form3" action = "" method = "POST">
+  <b>lectuer's title:</b> <input type="text" name="title">
+  <br><br>
+  <b>lectuer's details: </b><input type="text" name="detail">
+  <br><br>
+  <b>presenter's name: </b><input type="text" name="user_name">
+  <br><br>
+  <b>Date: </b><input type="date" name="date_">
+  <br><br>
+  <b>Time: </b><input type="time" name="time_">
+  <br><br>
+  <b>place: </b><input type="text" name="place">  
+  <br><br>
+  <button type="submit" name="submit" value="Add">submit</button>
+  <br><br>
+ <input id = "clearinput" type = "reset" value = "Clear" />
+</form>
+
+
+<!--------------------------------------------------------------------------------->
+
+<div class="container">
+
+  <div class="card-columns">
+
+
+    <div class="card bg-light">
+    <div class="card-body text-center">
+      <p class="card-text">title: introduction to robotics <br>
+detail: learn about the basics of robotics <br>
+presenter: Dr. leylah <br>
+date: 2021-12-07 <br>
+time: 13:15:00 <br>
+place: YUC-F</p>
+    </div>
+  </div>
+  <div class="card bg-light">
+      <div class="card-body text-center">
+        <p class="card-text">title: Python Programming <br>
+         detail: basics of python <br>
+         presenter: Dr. kajal <br>
+         date: 2022-01-08 <br>
+         time: 10:15:00 <br>
+         place: Online</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--------------------------------------------------------------------------------->
+
+<!--form to add lectuer programs -->
+
+<!--
+<nav>
+<ul>
+<li>item 1<button type="button" id="deletelectuer1">Delete</button></li>
+<li>item 2<button type="button" id="deletelectuer2">Delete</button></li>
+<li>item 3<button type="button" id="deletelectuer3">Delete</button></li>
+</ul>
+</nav>
+-->
+
+
+<br>
+<br>
+<br><!--replace this later with CSS panel/margin or padding, having this many br doesnt feel right -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<footer>
+<p id = "aboutus">here is the about part<p>
+</footer>
+</body>
+</html>
