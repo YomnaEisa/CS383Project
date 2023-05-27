@@ -10,7 +10,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-  <link href="css/new.css" rel="stylesheet">
+  <!-- <link href="css/new.css" rel="stylesheet">-->
+  <link href="css/styling.css" rel="stylesheet"> 
+
 
 
 <style>
@@ -70,55 +72,76 @@
   }
 } 
 
+
 </style>
+
 </head>
 <body>
   
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-md navbar-light bg-white "><!--sticky-top-->
-    <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="css/images/logo.png" height="80px" width="80px"></a>
-    <a class="navbar-brand" href="#"><img src="css/images/yucdep_logo.png"  height="80px"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-        data-target="#navbarResponsive">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="newhome.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="workshop_student.php">Workshop</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="pleasework.htm">Resources</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://sdl.edu.sa/sdlportal/en/publishers.aspx">SDL</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#aboutus">About Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="logout.php">Log Out</a>
-            </li>
-        </ul>
-    </div>
-    </div>
-</nav>
+   <!-- Navigation -->
+
+   <nav class="navbar navbar-expand-md navbar-light bg-white "> <!-- sticky-top -->
+      <div class="container-fluid">
+         <a class="navbar-brand" href="#"><img src="css/images/logo.png" height="80px" width="80px"></a>
+         <a class="navbar-brand" href="#"><img src="css/images/yucdep_logo.png" height="80px"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item ">
+                  <a class="nav-link" href="newhome.html">Home</a>
+               </li>
+               <li class="nav-item active">
+                  <a class="nav-link" href=#">Workshops</a>
+               </li>
+               <li class="nav-item ">
+                  <a class="nav-link" href="resources.html">Resources</a>
+               </li>
+               <li class="nav-item ">
+                  <a class="nav-link" href="https://sdl.edu.sa/sdlportal/en/publishers.aspx">SDL</a>
+               </li>
+               <li class="nav-item ">
+                  <a class="nav-link" href="#aboutus">About Us</a>
+               </li>
+               <li class="nav-item ">
+                  <a class="nav-link" href="logout.php">Log Out</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+<br>
+
+
 <!-- Upcoming Workshop-->
-<div id="about"  class="about">
+
+<div id="about" class="mobile" style = "padding-top: 5%; padding-bottom: 2%">
          <div class="container">
             <div class="row d_flex">
                <div class="col-md-7">
                   <div class="titlepage">
                      <h2> Upcoming Workshops</h2>
-                     <span></span></div></div></div>
+                     <span></span>
+                     </div>
+                    </div>
+                  </div>
+
+                     <!--
+                     <div>interested in hosting your own workshop? apply for one now!
+                      <br>
+                      <br>
+                      <a class="read_more_color" href="hostWorkshop.php"> Apply <i class="fa fa-arrow-right"
+                        aria-hidden="true"></i></a>
+                        <br>
+                        <br>
+                    </div>
+-->
+
 
 <?php 
-session_start(); 
+//session_start(); 
          include 'user.php';
          $user  = new User();
          $req = $user->workshops();
@@ -138,12 +161,14 @@ session_start();
       <div class="col-md-4">
       <div class="card card-1">  
       <h3><?php echo $data['title'];?></h3>
-      <p><?php echo $data['detail'];?></p>
-      <p><?php echo $data['presenter'];?></p>
-      <p><?php echo $data['date_time'];?></p>
-      <p><?php echo $data['place'];?></p>
-  <a class="btn btn-outline-secondary" href="workshop_enroll.php?id=<?php echo $data["id"]; ?>">Enroll</a>
+      <p>Detail: <?php echo $data['detail'];?></p>
+      <p>Presenter: <?php echo $data['presenter'];?></p>
+      <p>Date and Time: <?php echo $data['date_time'];?></p>
+      <p>Place: <?php echo $data['place'];?></p>
+      <p>Room: <?php echo $data['room'];?></p>
 
+ <!-- <a onclick="alert_enroll_workshop()" class="btn btn-outline-secondary" href="workshop_enroll.php?id=<?php echo $data["id"]; ?>">Enroll</a>
+       -->
 </div>
   </div>
 
@@ -151,24 +176,44 @@ session_start();
         }   
        } 
          ?>
-         </div></div></div></div></div>
+         </div></div></div>
+         <div style = "padding-bottom: 5%; padding-top: 2%;">
+         <div class="container">
+            <div class="row d_flex">
+               <div class="col-md-10">
+                     <h5 style ="color: #fff">Interested in hosting your own workshop? apply for one now!</h5>
+                     <br>
+                     <a class="read_more_color" href="hostWorkshop.php"> Apply <i class="fa fa-arrow-right"
+                        aria-hidden="true"></i></a>
+                  </div>
+                </div>
 
-
-
-      <!-- about section-->
-      <div id="aboutus" class="about-section">
-        <div class="inner-container">
-            <h1>About Us</h1>
-            <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.
-            </p>
-            <div class="skills">
-                <span>Helpin Sessions</span>
-                <span>Volunteering</span>
-                <span>Offering Workshops</span>
-            </div>
+<br>
+<br>
         </div>
-    </div>
+      </div>
+        </div>
+        
+
+
+
+   <!-- about section-->
+   <div id="aboutus" class="about-section" style = "padding-top: 0%;">
+      <div class="inner-container">
+         <h1>About Us</h1>
+         <p class="text">
+            The <i><b>Programming Center</b></i> is located within the Yanbu Industrial College and is
+             dedicated to providing computer science and engineering students with the support they need to 
+             excel in their courses.
+             
+             <br><br><b>Our mission</b> is to help our students become knowledgeable and exceptional 
+             engineers by offering a wide range of resources and services. We believe in providing
+              a collaborative and inclusive learning environment that fosters creativity and innovation.
+         </p>
+         <div class="skills">
+         </div>
+      </div>
+   </div>
 
 
 

@@ -4,12 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Host Your WorkShop</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script type="text/javascript" src = https://code.jquery.com/jquery-3.5.1.js></script> 
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-  <link href="css/new.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <link href="css/styling.css" rel="stylesheet">
   <style>
 
 .container33 {
@@ -70,44 +72,51 @@
     .button-form:hover {
       box-shadow: none;
     }
-    </style>
+      
 
+ 
+    </style>
+<script>
+
+</script>
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-md navbar-light bg-white "><!--sticky-top-->
+ <!-- Navigation -->
+
+ <nav class="navbar navbar-expand-md navbar-light bg-white "> <!-- sticky-top -->
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="css/images/logo.png" height="80px" width="80px"></a>
-    <a class="navbar-brand" href="#"><img src="css/images/yucdep_logo.png"  height="80px"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-    data-target="#navbarResponsive">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarResponsive">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="teacher_sessions.php">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="workshop.php">Workshop</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="pleasework.htm">Resources</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://sdl.edu.sa/sdlportal/en/publishers.aspx">SDL</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#aboutus">About Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="logout.php">Log Out</a>
-      </li>
-    </ul>
-  </div>
+     <a class="navbar-brand" href="#"><img src="css/images/logo.png" height="80px" width="80px"></a>
+     <a class="navbar-brand" href="#"><img src="css/images/yucdep_logo.png" height="80px"></a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+           <li class="nav-item">
+              <a class="nav-link" href="newhome.html">Home</a>
+           </li>
+           <li class="nav-item ">
+              <a class="nav-link active" href="workshop_student.php">Workshop</a>
+           </li>
+           <li class="nav-item ">
+              <a class="nav-link" href="resources.html">Resources</a>
+           </li>
+           <li class="nav-item ">
+              <a class="nav-link" href="https://sdl.edu.sa/sdlportal/en/publishers.aspx">SDL</a>
+           </li>
+           <li class="nav-item ">
+              <a class="nav-link" href="#aboutus">About Us</a>
+           </li>
+           <li class="nav-item ">
+              <a class="nav-link" href="logout.php">Log Out</a>
+           </li>
+        </ul>
+     </div>
   </div>
 </nav>
+<br>
+<!-- 
 <div class="container33">
     <img class="img-form" 
       src="css/images/logo.png"
@@ -133,22 +142,74 @@
       <button class="button-form" type="submit" name="submit" value="submit">Host Your Workshop</button>
     </div></form>
   </div>
-  
+  -->
+<div class="mobile" style = "padding: 5%">
 
-      <!-- about section-->
-      <div id="aboutus" class="about-section">
-        <div class="inner-container">
-            <h1>About Us</h1>
-            <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.
-            </p>
-            <div class="skills">
-                <span>Helpin Sessions</span>
-                <span>Volunteering</span>
-                <span>Offering Workshops</span>
-            </div>
-        </div>
+<div class="alert alert-success" id="workshop_host_apply_alert" style ="display: none;">
+  <button type="button" class="close" data-dismiss="alert">x</button>
+  <strong>Success! </strong>Your application is sent out to our admin successfully, we'll get back to you soon!
+</div>
+
+
+<div class="container">
+
+   <!-- <img class="img-form" 
+      src="css/images/logo.png"
+      alt="image">-->
+    <form method="post" class="formcontainer" >
+    <div class="container-text" >
+      <h2 class="h-form" style = "color:#fff">Host Your Own Workshop </h2>
+      <p class="p-form" style = "color:#fff">You can schedule your own workshop with the Programming Center Team, <br> We Encourage students to share their knowledge<br>At any Time.</p>
+
+        <input class="input-form" type="text" placeholder="Enter Your Email" name="fromEmail" id ="fromEmail" required>
+
+        <input class="input-form" type="text" placeholder="Enter Your phone" name="phone" id = "phone" required>
+
+        <input class="input-form" type="text" placeholder="Enter A title for your workshop" name="title" id = "title" required>
+
+        <input class="input-form" type="text" placeholder="Enter Any Details that can help us understand the purpose.." id = "details" name="details" required>
+
+         <input class="input-form" type="datetime-local" name="date_time" placeholder="Enter Time" id = "date_time" required>
+
+        <input class="input-form" type="text" placeholder="Enter A place for your workshop" name="place" id = "place" required>
+
+      <button id = "workshop_host_apply_button" class="read_more_color"
+      style = "margin-left: 41%; margin-top:3%;">Apply</button>
+      
     </div>
+  
+  </form>
+<br>
+  <div class="d-flex justify-content-center">
+  <div id = "hostworkshop_spinner" class="spinner-border text-light" role="status" style = "display: none;">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+  </div>
+
+
+  </div>
+
+
+
+       <!-- about section-->
+   <div id="aboutus" class="about-section" style = "padding-top: 0%;">
+      <div class="inner-container">
+         <h1>About Us</h1>
+         <p class="text">
+            The <i><b>Programming Center</b></i> is located within the Yanbu Industrial College and is
+             dedicated to providing computer science and engineering students with the support they need to 
+             excel in their courses.
+             
+             <br><br><b>Our mission</b> is to help our students become knowledgeable and exceptional 
+             engineers by offering a wide range of resources and services. We believe in providing
+              a collaborative and inclusive learning environment that fosters creativity and innovation.
+         </p>
+         <div class="skills">
+         </div>
+      </div>
+   </div>
 
 
 
@@ -199,7 +260,7 @@
   </section>
 </footer>
 
-<script src="main.js"></script>
+<script src="NewMain.js"></script>
 
 </body>
 </html>

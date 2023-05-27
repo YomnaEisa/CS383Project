@@ -2,7 +2,7 @@ var script = document.createElement('script');
 script.type = 'text/javascript';
 script.src = "http://code.jquery.com/jquery-3.5.1.min.js";
 
- 
+
 $(document).ready(function(){
   // Add smooth scrolling  
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
@@ -58,7 +58,7 @@ function show_hide() {
 }
 
  //Chatbot 
-
+/*
 var messages = [], //array that hold the record of each string in chat
   lastUserMessage = "", //keeps track of the most recent input string from the user
   botMessage = "", //var keeps track of what the chatbot is going to say
@@ -249,7 +249,240 @@ slot = 'Slot C: 01:15 - 02:05'
 
   //botMessage = 'Awsome! so before we move forward, please check if all your information is correct. <br> if it is please anwser with done, if not please awnser with no. <br> <p>Course Code: '+course+'<br>day: '+day+'<br>time slot: '+ slot+'</p>';
 
+} */
+
+
+var messages = [], //array that hold the record of each string in chat
+  lastUserMessage = "", //keeps track of the most recent input string from the user
+  botMessage = "", //var keeps track of what the chatbot is going to say
+  day = "",
+  slot = "",
+  course ="",
+  name = "",
+  slotName= "",
+  botName = 'Chatbot', //name of the chatbot
+  talking = false; //when false the speach function doesn't work
+
+
+//edit this function to change what the chatbot says
+function chatbotResponse() {
+   botMessage = "im confused"; //the default message
+  if (lastUserMessage === 'hi' || lastUserMessage =='hello' || lastUserMessage =='Hello' || lastUserMessage =='Hi' || lastUserMessage =='Hey' || lastUserMessage =='hey'
+  || lastUserMessage =='greetings' || lastUserMessage =='Greetings' || lastUserMessage =='good morning' || lastUserMessage =='good evening' || lastUserMessage =='good afternoon'
+  || lastUserMessage =='whats up') {
+    const hi = ['hi','hello', 'hi']
+    botMessage = hi[Math.floor(Math.random()*(hi.length))];
+  }
+ 
+  /*
+   // slotNames
+    if (lastUserMessage === 'A') { //HELP here
+slotName = 'A';  }
+     
+if (lastUserMessage === 'B') { //HELP here
+slotName = 'B';  }
+
+if (lastUserMessage === 'C') { //HELP here
+slotName = 'C'; } */
+
+  if (lastUserMessage === 'bye' || lastUserMessage =='Bye' || lastUserMessage =='Thank you' || lastUserMessage =='Thanks' || lastUserMessage =='bye bye' ) {
+    const hi = ['Bye','see you soon!', 'Bye Bye!']
+    botMessage = hi[Math.floor(Math.random()*(hi.length))];
+  }
+ 
+ 
+  if (lastUserMessage === 'help' || lastUserMessage === 'HELP' || lastUserMessage === 'Help' || lastUserMessage === 'i need help'|| lastUserMessage === 'i want help' || lastUserMessage === 'get resources' || lastUserMessage === 'send me resources') { //HELP here
+    botMessage = 'Sure! Enter which Course you need its resources of! \n example: CS480';
+  }
+
+//days of the week with their time slots
+  if (lastUserMessage === 'CS101' || lastUserMessage === 'Cs101' || lastUserMessage === 'cs101' || lastUserMessage === 'cS101') { //HELP here
+    botMessage = 'CS101 - Introduction to Computer Programming resources: \n W3School - C programming https://www.w3schools.com/c/c_intro.php#:~:text=What%20is%20C%3F,write%20the%20UNIX%20operating%20system. ';
+    course = lastUserMessage;
+  }
+
+  if (lastUserMessage === 'CS102' || lastUserMessage === 'Cs102' || lastUserMessage === 'cs102' || lastUserMessage === 'cS102') { //HELP here
+    botMessage = 'CS102';
+    course = lastUserMessage;
+  }
+
+  if (lastUserMessage === 'CS202' || lastUserMessage === 'Cs202' || lastUserMessage === 'cs202' || lastUserMessage === 'cS202') { //HELP here
+    botMessage = 'CS202';
+    course = lastUserMessage;
+  }
+
+  if (lastUserMessage === 'CS201' || lastUserMessage === 'Cs201' || lastUserMessage === 'cs201' || lastUserMessage === 'cS201') { //HELP here
+    botMessage = 'CS201';
+    course = lastUserMessage;
+  }
+ 
+  if (lastUserMessage === 'CS203' || lastUserMessage === 'Cs203' || lastUserMessage === 'cs203' || lastUserMessage === 'cS203') { //HELP here
+    botMessage = 'CS203';
+    course = lastUserMessage;
+  }
+
+  if (lastUserMessage === 'CS204' || lastUserMessage === 'Cs204' || lastUserMessage === 'cs204' || lastUserMessage === 'cS204') { //HELP here
+    botMessage = 'CS204';
+    course = lastUserMessage;
+  }
+
+  if (lastUserMessage === 'CS311' || lastUserMessage === 'Cs311' || lastUserMessage === 'cs311' || lastUserMessage === 'cS311') { //HELP here
+    botMessage = 'CS311';
+    course = lastUserMessage;
+  }
+
+  if (lastUserMessage === 'CS302' || lastUserMessage === 'Cs302' || lastUserMessage === 'cs302' || lastUserMessage === 'cS302') { //HELP here
+    botMessage = 'CS302';
+    course = lastUserMessage;
+  }
+
+  if (lastUserMessage === 'CS381' || lastUserMessage === 'Cs381' || lastUserMessage === 'cs381' || lastUserMessage === 'cS381') { //HELP here
+    botMessage = 'CS381';
+    course = lastUserMessage;
+  }
+
+  if (lastUserMessage === 'CS382' || lastUserMessage === 'CS382' || lastUserMessage === 'CS382' || lastUserMessage === 'CS382') { //HELP here
+    botMessage = 'CS382';
+    course = lastUserMessage;
+  }
+
+  if (lastUserMessage === 'CS383' || lastUserMessage === 'CS383' || lastUserMessage === 'CS383' || lastUserMessage === 'CS383') { //HELP here
+    botMessage = 'CS383';
+    course = lastUserMessage;
+  }
+
+  if (lastUserMessage === 'CS401' || lastUserMessage === 'CS401' || lastUserMessage === 'CS401' || lastUserMessage === 'CS401') { //HELP here
+    botMessage = 'CS401';
+    course = lastUserMessage;
+  }
+
+  if (lastUserMessage === 'CS480' || lastUserMessage === 'CS480' || lastUserMessage === 'CS480' || lastUserMessage === 'CS480') { //HELP here
+    botMessage = 'CS480';
+    course = lastUserMessage;
+  }
+
+  /*
+  //each sunday with the choosen time slot
+    if (lastUserMessage === 'CS101' || lastUserMessage === 'Cs101' || lastUserMessage === 'cs101' || lastUserMessage === 'cS101') { //HELP here
+slot = 'Slot A: 10:15 - 11:05'
+    botMessage = 'you have pick slot A on sunday, correct? <br> awnser with Yes/no';
+  }
+   
+      if (day === 'sunday'&& slotName === 'B') { //HELP here
+slot = 'Slot B: 11:15 - 12:05'
+    botMessage = 'you have pick slot B on sunday, correct? <br> awnser with Yes/no';
+  }
+ 
+      if (day === 'sunday' && slotName === 'C' ) { //HELP here
+slot = 'Slot C: 01:15 - 02:05'
+    botMessage = 'you have pick slot C on sunday, correct? <br> awnser with Yes/no';
+  }
+ 
+ 
+
+
+
+  //each monday with the choosen time slot
+  //Slot A: 08:15 - 09:05 <br> Slot B: 02:15 - 03:05 <br> Slot C: 03:15 - 04:05 <br> ';
+    if (day === 'monday' && slotName === 'A') { //HELP here
+slot = 'Slot A: 08:15 - 09:05'
+    botMessage = 'you have pick slot A on Monday, correct? <br> awnser with Yes/no';
+  }
+   
+      if (day === 'monday' && slotName === 'B') { //HELP here
+slot = 'Slot B: 02:15 - 03:05'
+    botMessage = 'you have pick slot B on Monday, correct? <br> awnser with Yes/no';
+  }
+ 
+      if (day === 'monday' && slotName === 'C') { //HELP here
+slot = 'Slot C: 03:15 - 04:05'
+    botMessage = 'you have pick slot C on Monday, correct? <br> awnser with Yes/no';
+  }
+ 
+
+ 
+    //each Tuesday with the choosen time slot
+//<br>Slot A: 07:15 - 08:05 <br> Slot B: 09:15 - 10:05 <br> Slot C: 01:15 - 02:05 <br>  
+if (day === 'tuesday' && slotName === 'A') { //HELP here
+slot = 'Slot A: 07:15 - 08:05'
+    botMessage = 'you have pick slot A on Tuesday, correct? <br> awnser with Yes/no';
+  }
+   
+      if (day === 'tuesday' && slotName === 'B') { //HELP here
+slot = 'Slot B: 09:15 - 10:05'
+    botMessage = 'you have pick slot B on Tuesday, correct? <br> awnser with Yes/no';
+  }
+ 
+      if (day === 'tuesday' && slotName === 'C') { //HELP here
+slot = 'Slot C: 01:15 - 02:05'
+    botMessage = 'you have pick slot C on Tuesday, correct? <br> awnser with Yes/no';
+  }
+ 
+ 
+    //each wednesday with the choosen time slot
+//<br>Slot A: 10:15 - 11:05 <br> Slot B: 11:15 - 12:05 <br> Slot C: 01:15 - 02:05  
+    if (day === 'wednesday'&& slotName === 'A') { //HELP here
+slot = 'A: 10:15 - 11:05'
+    botMessage = 'you have pick slot A on Wednesday, correct? <br> awnser with Yes/no';
+  }
+   
+      if (day === 'wednesday'&& slotName === 'B') { //HELP here
+slot = 'Slot B: 11:15 - 12:05'
+    botMessage = 'you have pick slot B on Wednesday, correct? <br> awnser with Yes/no';
+  }
+ 
+      if (day === 'wednesday' && slotName === 'C') { //HELP here
+slot = 'Slot C: 01:15 - 02:05  '
+    botMessage = 'you have pick slot C on Wednesday, correct? <br> awnser with Yes/no';
+  }
+ 
+ 
+     //each Thursday with the choosen time slot
+  //<br>Slot A: 08:15 - 09:05 <br> Slot B: 11:15 - 12:05 <br> Slot C: 01:15 - 02:05 <br>
+ 
+      if (day === 'thursday' && slotName === 'A') { //HELP here
+slot = 'Slot A: 08:15 - 09:05'
+    botMessage = 'you have pick slot A on Thursday, correct? <br> awnser with Yes/no';
+  }
+   
+      if (day === 'thursday' && slotName === 'B') { //HELP here
+slot = 'Slot B: 11:15 - 12:05'
+    botMessage = 'you have pick slot B on Thursday, correct? <br> awnser with Yes/no';
+  }
+ 
+      if (day === 'thursday' && slotName === 'C') { //HELP here
+slot = 'Slot C: 01:15 - 02:05'
+    botMessage = 'you have pick slot C on Thursday, correct? <br> awnser with Yes/no';
+  }
+ 
+ */
+ 
+  /*
+      if (lastUserMessage === 'Yes' || lastUserMessage === 'yes' || lastUserMessage === 'YES' || lastUserMessage === 'Y' || lastUserMessage === 'y') { //HELP here
+    botMessage = 'Cool! now, please send me the following information<br> course code<br> example: CS383';
+  }
+ 
+ 
+      if (lastUserMessage === 'No' || lastUserMessage === 'no' || lastUserMessage === 'NO' || lastUserMessage === 'N' || lastUserMessage === 'n' ) { //HELP here
+    botMessage = 'Ok lets start over! Enter which day of the week you would like you session in. example: sunday';
+  }
+ 
+     if (lastUserMessage === 'CS101' || lastUserMessage === 'CS102' || lastUserMessage === 'CS201' || lastUserMessage === 'CS202' || lastUserMessage === 'CS203' || lastUserMessage === 'CS204' || lastUserMessage === 'CS311' || lastUserMessage === 'CS331' || lastUserMessage === 'CS302' || lastUserMessage === 'CS382' || lastUserMessage === 'CS383' || lastUserMessage === 'CS401' || lastUserMessage === 'CS480' || lastUserMessage === 'CS471') { //HELP here
+    course = lastUserMessage;
+    botMessage = 'Awsome! so before we move forward, please check if all your information is correct. <br> if it is please anwser with done, if not please awnser with no. <br><p>Course Code: '+course+'<br>day: '+day+'<br>time slot: '+ slot+'</p>';
+  }
+ 
+ 
+  if (lastUserMessage === 'done' || lastUserMessage === 'DONE' || lastUserMessage === 'Done' ) { //HELP here
+  botMessage = 'Alright! youre all set for your appointment! see you on '+day+' at '+slot+' in the programming center!';
+
+  }
+ 
+
+  //botMessage = 'Awsome! so before we move forward, please check if all your information is correct. <br> if it is please anwser with done, if not please awnser with no. <br> <p>Course Code: '+course+'<br>day: '+day+'<br>time slot: '+ slot+'</p>';
+*/
 }
+
 
 //this runs each time enter is pressed.
 //It controls the overall input and output

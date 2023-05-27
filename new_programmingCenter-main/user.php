@@ -29,10 +29,10 @@ class User
       function check_login($id,$password)
    {
        $conncetion = $this->connect();
-       $sql1="SELECT * from login_student WHERE student_id='$id' and password='$password'"; 
-       $sql2="SELECT * from login_teacher WHERE teacher_id='$id' and password='$password'";
-       $sql3="SELECT * from login_admin WHERE admin_id='$id' and password='$password'";
-       $sql4="SELECT * from login_volunteer WHERE volunteer_id='$id' and password='$password'";
+       $sql1="SELECT * FROM login_student WHERE student_id='$id' AND password='$password'"; 
+       $sql2="SELECT * from login_teacher WHERE teacher_id='$id' AND password='$password'";
+       $sql3="SELECT * from login_admin WHERE admin_id='$id' AND password='$password'";
+       $sql4="SELECT * from login_volunteer WHERE volunteer_id='$id' AND password='$password'";
 
        
        $result1   = $conncetion->query($sql1);
@@ -144,15 +144,15 @@ function add_session($week, $time, $place, $course, $teacher_id, $teacher_name)
 
 
 
-     function volunteer_request($name,$ID,$fromEmail,$phone,$CourseCode,$grade,$date_time)
+     function volunteer_request($name,$ID,$fromEmail,$phone,$CourseCode,$grade)
    {
      $conncetion = $this->connect();
-      $sql="INSERT INTO volunteeringrequest (name,ID,fromEmail,phone,CourseCode,grade,date_time)
-      VALUES ('$name','$ID','$fromEmail', '$phone', '$CourseCode', '$grade', '$date_time')";
+      $sql="INSERT INTO volunteeringrequest (name,ID,fromEmail,phone,CourseCode,grade)
+      VALUES ('$name','$ID','$fromEmail', '$phone', '$CourseCode', '$grade')";
 
 //////////////////////////
 
-      $mailto = "3910012@stu.rcyci.edu.sa";  //admin email 
+      $mailto = "programmingcenteryic@gmail.com";  //admin email 
  
  //getting customer data
  $name = $_SESSION['user_name'];
@@ -161,7 +161,6 @@ function add_session($week, $time, $place, $course, $teacher_id, $teacher_name)
  $phone = $_POST['phone']; //getting volunteer's Phone number
  $CourseCode = $_POST['CourseCode']; //getting coursecode from volunteer
  $grade = $_POST['grade']; //getting grade from volunteer
- $date_time = $_POST['date_time']; //getting grade from volunteer
 
 
 //email subjects
@@ -225,7 +224,7 @@ function add_session($week, $time, $place, $course, $teacher_id, $teacher_name)
 
 //////////////////////////
 
-      $mailto = "3910012@stu.rcyci.edu.sa";  //admin email 
+      $mailto = "programmingcenteryic@gmail.com";  //admin email 
  
  //getting customer data
  $teacher_name  = $_SESSION['user_name'];
@@ -337,7 +336,7 @@ function add_session($week, $time, $place, $course, $teacher_id, $teacher_name)
       {
           While ($rows = $result->fetch_assoc()){   
            //$data[]=$row;
-           $id  = $rows['id'];
+           $id  = $rows['ID'];
            $title = $rows['title'];
            $details = $rows['details'];
            $teacher_name  = $rows['teacher_name'];
@@ -353,7 +352,7 @@ function add_session($week, $time, $place, $course, $teacher_id, $teacher_name)
 
 /////////// EMAIL PART 
 
-     $mailto = "3910012@stu.rcyci.edu.sa";  //admin email 
+     $mailto = "programmingcenteryic@gmail.com";  //admin email 
 
       
 //email subjects
@@ -421,7 +420,7 @@ function deleteWorkshopReq($sql)
       {
           While ($rows = $result->fetch_assoc()){   
            //$data[]=$row;
-           $id = $rows['id'];
+           $id = $rows['ID'];
            $teacher_name = $rows['teacher_name'];
            $teacher_id = $rows['teacher_id'];
            $fromEmail = $rows['fromEmail'];
@@ -431,7 +430,7 @@ function deleteWorkshopReq($sql)
            $date_time      = $rows['date_time'];
            $place      = $rows['place'];
 
-        $sqll = "DELETE FROM workshoprequest WHERE ID =  '" . $rows["id"] . "'";
+        $sqll = "DELETE FROM workshoprequest WHERE ID =  '" . $rows["ID"] . "'";
 
     }
 
@@ -456,7 +455,7 @@ function delete_workshop_req($sql)
       {
           While ($rows = $result->fetch_assoc()){   
            //$data[]=$row;
-           $id = $rows['id'];
+           $id = $rows['ID'];
            $teacher_name = $rows['teacher_name'];
            $teacher_id = $rows['teacher_id'];
            $fromEmail = $rows['fromEmail'];
@@ -465,13 +464,13 @@ function delete_workshop_req($sql)
            $title       = $rows['title'];
            $date_time      = $rows['date_time'];
            $place      = $rows['place'];
-
-        $sql = "DELETE FROM workshoprequest WHERE id =  '" . $rows["id"] . "'";
-
-
+//ADD ID COLUMN IN TABLE
+        $sql = "DELETE FROM workshoprequest WHERE id =  '" . $rows["ID"] . "'";
 
 
-$mailto = "3910012@stu.rcyci.edu.sa";  //admin email 
+
+
+$mailto = "programmingcenteryic@gmail.com";  //admin email 
 
       
 //email subjects
@@ -601,7 +600,7 @@ Regards, Programming Center Team";
            $sql = "INSERT INTO volunteer (name, ID, fromEmail, phone, CourseCode, grade) VALUES ('$name', '$ID', '$Email',' $phone', '$CourseCode', '$grade');";
   
 
-  $mailto = "3910012@stu.rcyci.edu.sa";  //admin email 
+  $mailto = "programmingcenteryic@gmail.com";  //admin email 
 
       
 //email subjects
@@ -677,7 +676,7 @@ function delete_volunteer_req($sql)
         $sql = "DELETE FROM volunteeringrequest WHERE ID =  '" . $row["ID"] . "'";
 
  
- $mailto = "3910012@stu.rcyci.edu.sa";  //admin email 
+ $mailto = "programmingcenteryic@gmail.com";  //admin email 
 
       
 //email subjects

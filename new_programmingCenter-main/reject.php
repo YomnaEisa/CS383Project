@@ -13,7 +13,8 @@ $sql = "select * from `volunteeringrequest`";
    
 
  if($sql){
-        echo "<script> alert('Request has been rejected.');";
+        //echo "<script> alert('Request has been rejected.');";
+        echo "<script>";
         echo "location='request.php';</script>";
 
 

@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <?php 
+  session_start(); 
+  ?>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home</title>
+  <title>My Sessions</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-  <link href="css/new.css" rel="stylesheet">
-  
+  <link href="css/styling.css" rel="stylesheet">
+
 <style>
 
   .card{
@@ -69,45 +72,45 @@
 } 
 
 </style>
+
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-md navbar-light bg-white "><!--sticky-top-->
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="css/images/logo.png" height="80px" width="80px"></a>
-    <a class="navbar-brand" href="#"><img src="css/images/yucdep_logo.png"  height="80px"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-    data-target="#navbarResponsive">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarResponsive">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="home_volunteer.html">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="workshop_student.php">Workshop</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="pleasework.htm">Resources</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://sdl.edu.sa/sdlportal/en/publishers.aspx">SDL</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#aboutus">About Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="logout.php">Log Out</a>
-      </li>
-    </ul>
-  </div>
-  </div>
-</nav>
- 
 
-    <div id="about"  class="about">
+<nav class="navbar navbar-expand-md navbar-light bg-white ">  <!-- sticky-top -->
+  <div class="container-fluid">
+     <a class="navbar-brand" href="#"><img src="css/images/logo.png" height="80px" width="80px"></a>
+     <a class="navbar-brand" href="#"><img src="css/images/yucdep_logo.png" height="80px"></a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+           <li class="nav-item">
+              <a class="nav-link" href="home_volunteer.html">Home</a>
+           </li>
+           <li class="nav-item ">
+              <a class="nav-link" href="workshop_student.php">Workshop</a>
+           </li>
+           <li class="nav-item ">
+              <a class="nav-link" href="resources.html">Resources</a>
+           </li>
+           <li class="nav-item ">
+              <a class="nav-link" href="https://sdl.edu.sa/sdlportal/en/publishers.aspx">SDL</a>
+           </li>
+           <li class="nav-item ">
+              <a class="nav-link" href="#aboutus">About Us</a>
+           </li>
+           <li class="nav-item ">
+              <a class="nav-link" href="logout.php">Log Out</a>
+           </li>
+        </ul>
+     </div>
+  </div>
+</nav> 
+ <br>
+<div class="mobile" style="padding: 4%;">
+    <div id="about" >
          <div class="container">
             <div class="row d_flex">
                <div class="col-md-7">
@@ -117,12 +120,20 @@
                   </div>
                </div>
             </div>
-         
+  
+            <!-- ALERT -->
+  <div class="alert alert-success" id="delete_session_alert" style = "display: none;">
+  <button type="button" class="close" data-dismiss="alert">x</button>
+  <strong>Success!</strong> Your session is deleted successfully!</div>   
 
+<br>
+<a class="read_more_color" href="addSession.php" >Add Session</a>
+<br>
+<br>
  <section class="row"> 
-<a class="read_more" href="addSession.php" > Add Session</a>
  <?php 
- session_start(); 
+ //session_start(); 
+
          include 'user.php';
          $user  = new User();
 
@@ -150,7 +161,10 @@
       <p>Time: <?php echo $data['time'];?></p>
       <p>Week Number: <?php echo $data['week_number'];?></p>
       <p>Place: <?php echo $data['place'];?></p>
-  <a class="btn btn-outline-secondary" href="delete_session.php?session_id=<?php echo $data["session_id"]; ?>">Delete</a>
+ <a class="btn btn-outline-secondary"id = "delete_session_button" href="delete_session.php?session_id=<?php echo $data["session_id"]; ?>">Delete</a>
+ <!-- <button class="btn btn-outline-secondary" id = "delete_session_button">Delete</button> -->
+ 
+
 </div>
   </div>
 
@@ -161,22 +175,25 @@
          </div></div></div></div>
 
  </section>
-
+      </div>
  
    <!-- about section-->
-      <div id="aboutus" class="about-section">
-        <div class="inner-container">
-            <h1>About Us</h1>
-            <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.
-            </p>
-            <div class="skills">
-                <span>Helpin Sessions</span>
-                <span>Volunteering</span>
-                <span>Offering Workshops</span>
-            </div>
-        </div>
-    </div>
+   <div id="aboutus" class="about-section" style = "padding-top: 0%;">
+      <div class="inner-container">
+         <h1>About Us</h1>
+         <p class="text">
+            The <i><b>Programming Center</b></i> is located within the Yanbu Industrial College and is
+             dedicated to providing computer science and engineering students with the support they need to 
+             excel in their courses.
+             
+             <br><br><b>Our mission</b> is to help our students become knowledgeable and exceptional 
+             engineers by offering a wide range of resources and services. We believe in providing
+              a collaborative and inclusive learning environment that fosters creativity and innovation.
+         </p>
+         <div class="skills">
+         </div>
+      </div>
+   </div>
 
 
 

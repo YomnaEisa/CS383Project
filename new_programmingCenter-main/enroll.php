@@ -15,7 +15,7 @@
         if($sql)
 
 		{
-			echo "<script>alert('Office hour is booked successfully');";
+			echo "<script>";
 	        echo "location='sessions.php';</script>";
 		}
 	

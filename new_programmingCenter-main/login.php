@@ -43,6 +43,8 @@ if (isset($_REQUEST['submit']))
 	{
 
 		echo "<script>alert('Your User ID and/or Password are invalid.');";
+		echo $_SESSION['user_id'];
+		echo $_SESSION['user_name'];
 	    echo "location='login.htm';</script>";
 	}    
 }  

@@ -4,8 +4,8 @@ include 'user.php';
 
 $user = new User();
 
-	if(isset($_POST['submit']))
-	{
+	/*if(isset($_POST['submit']))
+	{*/
 		$teacher_name  = $_SESSION['user_name'];
 		$teacher_id  = $_SESSION['user_id'];
 		$fromEmail   = $_POST['fromEmail'];
@@ -20,8 +20,12 @@ $user = new User();
 
 		if($sql)
 		{
-			echo "<script>alert('You have request to host a workshop successfully');";
-	        echo "location='teacher_sessions.php';</script>";
+		//echo "<script>alert('You have request to host a workshop successfully');";
+		//echo "location='hostWorkshop.php';</script>";
+		echo "success";
+
+
+		  
 		}
 		else
 		{
@@ -29,6 +33,8 @@ $user = new User();
 	        echo "location='teacher_sessions.php';</script>";
 		}
 	
-}
+//creat a show fuction here with a timer to show an element with the alert
+
+//	}
 
 ?>

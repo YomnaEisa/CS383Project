@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function showUser(str) {
+  if (str=="") {
+    document.getElementById("txtHint").innerHTML="";
+    return;
+  }
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("txtHint").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","getResources.php?q="+str,true);
+  xmlhttp.send();
+}
+</script>
+<title>CSE Programming center - Resources</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> 
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+ <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script> -->
+  <!-- <link rel="stylesheet" href="css/style.css" /> -->
+  <link rel="stylesheet" href="css/styling.css" /> 
+
+
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+ <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> 
+</head> -->
+</head>
+<body>
+
+  <!-- Navigation -->
+
+  <nav class="navbar navbar-expand-md navbar-light bg-white "> <!-- sticky-top -->
+  <div class="container-fluid">
+       <a class="navbar-brand" href="#"><img src="css/images/logo.png" height="80px" width="80px"></a>
+       <a class="navbar-brand" href="#"><img src="css/images/yucdep_logo.png" height="80px"></a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+          <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+             <li class="nav-item">
+                <a class="nav-link" href="newhome.html">Home</a>
+             </li>
+             <li class="nav-item">
+                <a class="nav-link" href="workshop_student.php">Workshops</a>
+             </li>
+             <li class="nav-item active">
+                <a class="nav-link" href="#">Resources</a>
+             </li>
+             <li class="nav-item ">
+                <a class="nav-link" href="https://sdl.edu.sa/sdlportal/en/publishers.aspx">SDL</a>
+             </li>
+             <li class="nav-item ">
+                <a class="nav-link" href="#aboutus">About Us</a>
+             </li>
+             <li class="nav-item ">
+                <a class="nav-link" href="logout.php">Log Out</a>
+             </li>
+          </ul>
+       </div>
+    </div>
+ </nav> 
+<br>
+<!--
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+    <a class="navbar-brand" href="#"><img src="css/images/yucdep_logo.png" height="80px"></a> 
+    <a class="navbar-brand" href="#"><img src="css/images/logo.png" height="90px" width="90px" style="padding-left: 3%;"></a> 
+      <a class="nav-item nav-link active" href="#" style="padding-left: 5%; padding-top: 5%;">Home</a>
+      <a class="nav-item nav-link" href="workshop_admin.php" style="padding-left: 10%; padding-top: 5%;">Workshops</a>
+      <a class="nav-item nav-link" href="resources.html" style="padding-left: 10%; padding-top: 5%;">Resources</a>
+      <a class="nav-item nav-link" href="https://sdl.edu.sa/sdlportal/en/publishers.aspx" style="padding-left: 10%; padding-top: 5%;">SDL</a>
+      <a class="nav-item nav-link" href="#aboutus" style="padding-left: 10%; padding-top: 5%;">About</a>
+      <a class="nav-item nav-link" href="logout.php" style="padding-left: 10%; padding-top: 5%;">Logout</a>
+    </div>
+  </div>
+</nav> -->
+
+<!--
+
+<form>
+<select name="users" onchange="showUser(this.value)">
+<option value="">Select a course:</option>
+<option value="1">CS101</option>
+<option value="2">C102</option>
+<option value="3">CS203</option>
+<option value="4">CS378</option>
+</select>
+</form>
+<br>
+<div id="txtHint"><b>Avalible resources will be listed here.</b></div>
+
+<article class="container2">
+<h2>We made it easy for you!</h2>
+<p>You can enter the course code and you will get the course resources immediately.</p> -->
+
+
+        <!--- Welcome Section -->
+<div class="mobile" style="padding-top: 5%;">
+<div class="container"> 
+  <div class="row d_flex">
+    <div class="col-lg-7">
+      <div class="titlepage" >
+         <h2>Resource ChatBot</h2>
+         <span></span>
+       </div>
+     </div>
+   </div>
+ </div> 
+
+ 
+ <div style="padding-left: 10%; padding-bottom: 3%; color: #fff"> 
+        <h5>Ask the ChatBot by typing the course code for example <b>'CS204'</b> to get the resources!</h5>        
+ </div> 
+
+
+
+<!-- Chatbot Here -->
+<div id='bodybox'>
+  <div id='chatborder'>
+    <p id="chatlog4" class="chatlog usermess">&nbsp;</p>
+    <p id="chatlog3" class="chatlog">&nbsp;</p>
+    <p id="chatlog2" class="chatlog usermess">&nbsp;</p>
+    <p id="chatlog1" class="chatlog chatlog4">&nbsp;</p>
+    <input type="text" name="chat" id="chatbox" placeholder=" Hi there! How can I Help you?" onfocus="placeHolder()">
+  </div>
+</div>
+</article>
+
+</div>
+<br>
+<br>
+<br>
+
+
+           <!-- about section-->
+           <div id="aboutus" class="about-section" style = "padding-top: 0%;">
+            <div class="inner-container">
+               <h1>About Us</h1>
+               <p class="text">
+                  The <i><b>Programming Center</b></i> is located within the Yanbu Industrial College and is
+                   dedicated to providing computer science and engineering students with the support they need to 
+                   excel in their courses.
+                   
+                   <br><br><b>Our mission</b> is to help our students become knowledgeable and exceptional 
+                   engineers by offering a wide range of resources and services. We believe in providing
+                    a collaborative and inclusive learning environment that fosters creativity and innovation.
+               </p>
+               <div class="skills">
+               </div>
+            </div>
+         </div>
+      
+
+         
+<footer>
+  <!-- Footer main -->
+  <section class="ft-main">
+    <div class="ft-main-item">
+      <h2 class="ft-title">About</h2>
+      <ul class = "ul">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+      </ul>
+    </div>
+    <div class="ft-main-item">
+      <h2 class="ft-title">Resources</h2>
+      <ul class = "ul">
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">SDL</a></li>
+        <li><a href="#">eBooks</a></li>
+        <li><a href="#">Webinars</a></li>
+      </ul>
+    </div>
+    <div class="ft-main-item">
+      <h2 class="ft-title">Contact</h2>
+      <ul class = "ul">
+        <li><a href="#">Help</a></li>
+      </ul>
+    </div>
+    <div class="ft-main-item">
+      <h2 class="ft-title">Stay Updated</h2>
+      <p>Get free updates before others do!</p>
+      <form class = "emailup">
+        <input type="email" name="email" placeholder="Enter email address">
+        <input type="submit" value="Subscribe">
+      </form>
+    </div>
+  </section>
+  <!-- Footer legal -->
+  <section class="ft-legal">
+    <ul class="ft-legal-list" class = "ul">
+      <li><a href="#">Terms &amp; Conditions</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li>&copy; 2021 by HAYA, YOMNA, SARAH</li>
+    </ul>
+  </section>
+</footer>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="NewMain.js"></script>
+</body>
+</html>
