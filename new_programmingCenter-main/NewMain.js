@@ -332,13 +332,19 @@ $(document).ready(function() {
 
     e.preventDefault();
 
-     var accept_volunteer = $(this).val()
+  //  var accept_vol = $(".accept_vol").value;
+  //  var accept_vol = $(".accept_vol:checked").val();
+    var accept_vol = $(this).prev().prev().prev().find('.thisid').html();
+
+   //var accept_vol = document.getElementsByClassName("accept_vol");
+  //var accept_vol1 = $("#accept_vol").val();
+    alert(accept_vol);
 
      $.ajax({
           type: "POST",
           url: "accept.php",
           data: { 
-            accept_volunteer : accept_volunteer
+            accept_vol : accept_vol
           },
           success: function(response) {
           alert(accept_vol);
@@ -348,3 +354,4 @@ $(document).ready(function() {
       });
   });
 });
+

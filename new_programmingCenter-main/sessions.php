@@ -138,7 +138,6 @@
       <h3><?php echo $data['course'];?></h3>
       <p>Teacher: <?php echo $data['teacher_name'];?></p>
       <p>Time: <?php echo $data['time'];?></p>
-      <p>Week Number: <?php echo $data['week_number'];?></p>
       <p>Place: <?php echo $data['place'];?></p>
       <p>status: <?php echo $data['status'];?></p>
 

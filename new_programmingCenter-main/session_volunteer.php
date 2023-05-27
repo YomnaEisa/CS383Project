@@ -143,7 +143,7 @@
          $courseArray = array();
   
          if ($session == null)
-          echo "<h3>No Sessions is added</h3>";
+          echo "<h3 style = \"color = #ffff;\">No Sessions is added</h3>";
 
       else 
       {

@@ -163,12 +163,11 @@
       <p><?php echo $data['fromEmail'];?></p>
       <p><?php echo $data['CourseCode'];?></p>
       <p><?php echo $data['grade'];?></p>
-  <!-- <a class="btn btn-outline-secondary" href="Accept.php?ID=<?php//echo $data["ID"];?>">Accept</a>
-    <a class="btn btn-outline-secondary" href="reject.php?ID=<?php //echo $data["ID"]; ?>">Reject</a>-->
-
-   <a class = "accept_vol" value="<?php echo $data['ID'];?>">Accept</a>
-    <a class="btn btn-outline-secondary" id = "reject_vol" value="<?php echo $data['ID']; ?>">Reject</a>
-
+   
+  <!--  <a class = "accept_vol" value=" //echo $data['ID'];?>">Accept</a> 
+    <a class="btn btn-outline-secondary" id = "reject_vol" value=" //echo $data['ID']; ?>">Reject</a> -->
+     <a class="btn btn-outline-secondary" href="Accept.php?ID=<?php echo $data["ID"];?>">Accept</a>
+    <a class="btn btn-outline-secondary" href="reject.php?ID=<?php echo $data["ID"]; ?>">Reject</a>
 </div>
 
   </div>
