@@ -223,7 +223,7 @@
   </section>
 </footer>
 
-<script src="NewMain.js"></script>
+<script src="JS/NewMain.js"></script>
 
 </body>
 </html>

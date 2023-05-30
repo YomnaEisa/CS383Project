@@ -213,7 +213,7 @@
 </footer>
 
 
-<script src="main.js"></script>
+<script src="JS/NewMain.js"></script>
 
 </body>
 </html>
