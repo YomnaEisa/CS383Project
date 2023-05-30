@@ -135,13 +135,11 @@
 
         <input class="input-form" type="text" placeholder="Enter The grade You score in The selected course.." id = "grade" name="grade" required>
 
-    <!--    <input class="input-form" type="datetime-local" name="date_time" placeholder="Enter Time" id = "date_time" required> -->
       <button class="read_more_color"
       style="margin-left:41%; margin-top: 1%" id = "volunteer_apply_button">Apply</button>
     </div></form>
 
     <br>
-    <!--   -->
   <div class="d-flex justify-content-center">
   <div id = "volunteerreq_spinner" class="spinner-border text-light" role="status" style = "display: none;">
     <span class="sr-only">Loading...</span>

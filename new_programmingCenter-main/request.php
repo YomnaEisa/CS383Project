@@ -105,24 +105,6 @@
       </div>
    </nav> 
    <br>
-<!--
-   <nav class="navbar navbar-expand-lg navbar-light bg-white">
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-     <span class="navbar-toggler-icon"></span>
-   </button>
-   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-     <div class="navbar-nav">
-     <a class="navbar-brand" href="#"><img src="css/images/yucdep_logo.png" height="80px"></a> 
-     <a class="navbar-brand" href="#"><img src="css/images/logo.png" height="90px" width="90px" style="padding-left: 3%;"></a> 
-       <a class="nav-item nav-link active" href="#" style="padding-left: 5%; padding-top: 5%;">Home</a>
-       <a class="nav-item nav-link" href="workshop_admin.php" style="padding-left: 10%; padding-top: 5%;">Workshops</a>
-       <a class="nav-item nav-link" href="resources.html" style="padding-left: 10%; padding-top: 5%;">Resources</a>
-       <a class="nav-item nav-link" href="https://sdl.edu.sa/sdlportal/en/publishers.aspx" style="padding-left: 10%; padding-top: 5%;">SDL</a>
-       <a class="nav-item nav-link" href="#aboutus" style="padding-left: 10%; padding-top: 5%;">About</a>
-       <a class="nav-item nav-link" href="logout.php" style="padding-left: 10%; padding-top: 5%;">Logout</a>
-     </div>
-   </div>
- </nav> -->
 
 <!-- volunteer request-->
 <div class="mobile" style="padding:3%">
@@ -134,7 +116,7 @@
             <div class="row d_flex">
                <div class="col-md-7">
                   <div class="titlepage">
-                     <h2> Volunteer Applications</h2>
+                     <h2> Volunteering Applications</h2>
                      <span></span></div></div></div>
 
  <?php 
@@ -146,7 +128,7 @@
          
 
          if ($req == null)
-          echo "<h3>No requests is added</h3>";
+          echo "<h3>No requests are added</h3>";
 
       else 
       {
@@ -191,7 +173,7 @@
          
 
          if ($req == null)
-          echo "<h3>No requests is added</h3>";
+          echo "<h3>No requests are added</h3>";
 
       else 
       {
@@ -204,11 +186,10 @@
       <div class="col-md-4">
       <div class="card card-1">  
       <h3><?php echo  $data['title'];?></h3>
-      <p><?php echo $data['teacher_id'];?></p>
+      <p><?php echo $data['teacher_name'];?></p>
       <p><?php echo $data['fromEmail'];?></p>
       <p><?php echo $data['phone'];?></p>
       <p><?php echo $data['details'];?></p>
-      <p><?php echo $data['teacher_name'];?></p>
       <p><?php echo  $data['date_time'];?></p>
       <p><?php echo  $data['place'];?></p>
 

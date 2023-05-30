@@ -11,7 +11,7 @@ $query = "select * from `workshoprequest`";
     $sql = $user->delete_workshop_req($query);
 
  if($sql){
-        echo "<script> alert('Request has been rejected.');";
+        echo "<script>";
         echo "location='request.php';</script>";
 
 

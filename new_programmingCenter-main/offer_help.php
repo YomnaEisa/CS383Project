@@ -4,8 +4,7 @@ include 'user.php';
 
 $user = new User();
 
-//	if(isset($_POST['submit']))
-//	{
+
 		$week   = $_POST['week'];
 		$time   = $_POST['time'];
 		$place  = $_POST['place'];
@@ -27,6 +26,6 @@ $user = new User();
 	        echo "location='session_volunteer.php';</script>";
 		}
 	
-//}
+
 
 ?>

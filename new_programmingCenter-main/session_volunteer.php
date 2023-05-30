@@ -159,7 +159,6 @@
        <?php $data['session_id'];?> 
       <h3><?php echo $data['course'];?></h3>
       <p>Time: <?php echo $data['time'];?></p>
-      <p>Week Number: <?php echo $data['week_number'];?></p>
       <p>Place: <?php echo $data['place'];?></p>
  <a class="btn btn-outline-secondary"id = "delete_session_button" href="delete_session.php?session_id=<?php echo $data["session_id"]; ?>">Delete</a>
  <!-- <button class="btn btn-outline-secondary" id = "delete_session_button">Delete</button> -->

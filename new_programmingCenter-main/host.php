@@ -4,8 +4,7 @@ include 'user.php';
 
 $user = new User();
 
-	/*if(isset($_POST['submit']))
-	{*/
+	
 		$teacher_name  = $_SESSION['user_name'];
 		$teacher_id  = $_SESSION['user_id'];
 		$fromEmail   = $_POST['fromEmail'];
@@ -33,8 +32,6 @@ $user = new User();
 	        echo "location='teacher_sessions.php';</script>";
 		}
 	
-//creat a show fuction here with a timer to show an element with the alert
 
-//	}
 
 ?>

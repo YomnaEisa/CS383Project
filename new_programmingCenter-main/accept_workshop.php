@@ -13,7 +13,7 @@ $query = "select * from `workshoprequest`";
 
 
     if($sql){
-        echo "<script> alert('Request accepted');";
+        echo "<script>";
         echo "location='request.php';</script>";
 
 

@@ -116,33 +116,7 @@
   </div>
 </nav>
 <br>
-<!-- 
-<div class="container33">
-    <img class="img-form" 
-      src="css/images/logo.png"
-      alt="image">
-    <form action="host.php" method="post" class="formcontainer">
-    <div class="container-text">
-      <h2 class="h-form">Host Your Own Workshop <br>According to your time!</h2>
-      <p class="p-form">You can schedule your own workshop with the Programming Center Team, <br> We Encourage students to get help <br>At any Time.</p>
 
-        <input class="input-form" type="text" placeholder="Enter Your Email" name="fromEmail" required>
-
-        <input class="input-form" type="text" placeholder="Enter Your phone" name="phone" required>
-
- <input class="input-form" type="text" placeholder="Enter Any Details that can help us understand the purpose.." name="details" required>
-        <input class="input-form" type="text" placeholder="Enter A title for your workshop" name="title" required>
-
-         <input class="input-form" type="datetime-local" name="date_time" placeholder="Enter Time" required>
-
-        <input class="input-form" type="text" placeholder="Enter A place for your workshop" name="place" required>
-
-       
-
-      <button class="button-form" type="submit" name="submit" value="submit">Host Your Workshop</button>
-    </div></form>
-  </div>
-  -->
 <div class="mobile" style = "padding: 5%">
 
 <div class="alert alert-success" id="workshop_host_apply_alert" style ="display: none;">

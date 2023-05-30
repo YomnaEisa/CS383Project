@@ -7,8 +7,7 @@
 	$user = new User();
     $conn = $user->connect();
 
-//	if(isset($_POST['submit']))
-//	{
+
 		$stdid = $_SESSION['user_id'];
 		$stdname = $_SESSION['user_name'];
 		$course = $_POST['course'];
@@ -17,8 +16,7 @@
 		$details = $_POST['details'];
 		$sql = $user->stu_appointment($stdid,$stdname,$course,$teacher,$date_time,$details);
         
-	//  echo "<script>";
-// echo "location='appointment.php';</script>";
+
 
 		
 		if($sql)
@@ -33,17 +31,4 @@
 		}
 
 
-/*
-		if($sql)
-		{
-			echo "<script>alert('Office hour is booked successfully');";
-	        echo "location='appointment.php';</script>";
-		}
-		else
-		{
-			echo "<script>alert('Unknown error occured. Please try again.');";
-	        echo "location='appointment.php';</script>";
-		}*/
-
-//	}
  ?>

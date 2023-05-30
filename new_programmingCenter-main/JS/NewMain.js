@@ -272,27 +272,7 @@ var formData = {
   });
 });
 
-//ALERT TO DELETE VOLUNTEER SESSION - NOT USED
 
-/*
-$(document).ready(function() {
-        
-  $("delete_session_button").click(function (e) {
-
-    e.preventDefault();
-
-      $.ajax({
-          type: "POST",
-          url: "delete_session.php",
-          success: function(response) {
-         $("#delete_session_alert").show();
-         $('html, body').animate({ scrollTop: 0 }, 0);
-             
-                        }
-      });
-  });
-});
-*/
 //ALERT TO BOOK A SESSION AT YOUR TIME
 
 $(document).ready(function() {
@@ -323,35 +303,4 @@ $(document).ready(function() {
   });
 });
 
-
-// ALERT TO ACCEPT/DECLINE VOLUNTEER - ADMIN
-
-$(document).ready(function() {
-        
-  $(".accept_vol").click(function (e) {
-
-    e.preventDefault();
-
-  //  var accept_vol = $(".accept_vol").value;
-  //  var accept_vol = $(".accept_vol:checked").val();
-    var accept_vol = $(this).prev().prev().prev().find('.thisid').html();
-
-   //var accept_vol = document.getElementsByClassName("accept_vol");
-  //var accept_vol1 = $("#accept_vol").val();
-    alert(accept_vol);
-
-     $.ajax({
-          type: "POST",
-          url: "accept.php",
-          data: { 
-            accept_vol : accept_vol
-          },
-          success: function(response) {
-          alert(accept_vol);
-         $("#add_vol_alert").show();
-         $('html, body').animate({ scrollTop: 0 }, 0);
-                        }
-      });
-  });
-});
 

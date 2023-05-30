@@ -111,70 +111,7 @@
   </div>
 </nav> 
 <br>
-<!--
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-     <span class="navbar-toggler-icon"></span>
-   </button>
-   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-     <div class="navbar-nav">
-     <a class="navbar-brand" href="#"><img src="css/images/yucdep_logo.png" height="80px"></a> 
-     <a class="navbar-brand" href="#"><img src="css/images/logo.png" height="90px" width="90px" style="padding-left: 3%;"></a> 
-       <a class="nav-item nav-link" href="home_volunteer.php" style="padding-left: 5%; padding-top: 5%;">Home</a>
-       <a class="nav-item nav-link" href="workshop_student.php" style="padding-left: 10%; padding-top: 5%;">Workshops</a>
-       <a class="nav-item nav-link" href="resources.html" style="padding-left: 10%; padding-top: 5%;">Resources</a>
-       <a class="nav-item nav-link" href="https://sdl.edu.sa/sdlportal/en/publishers.aspx" style="padding-left: 10%; padding-top: 5%;">SDL</a>
-       <a class="nav-item nav-link" href="#aboutus" style="padding-left: 10%; padding-top: 5%;">About</a>
-       <a class="nav-item nav-link" href="logout.php" style="padding-left: 10%; padding-top: 5%;">Logout</a>
-     </div>
-   </div>
- </nav> -->
 
-<!--
-<div class="container33">
-    <img class="img-form" 
-      src="css/images/logo.png"
-      alt="image">
-    <form action="offer_help.php" method="post" class="formcontainer">
-    <div class="container-text">
-      <h2 class="h-form">Add a Session <br>According to your time!</h2>
-      <p class="p-form">You can schedule your own session with the Programming Center Team, <br> We Encourage students to get help <br>At any Time.</p>
-       
-
-        <select  class="input-form" id="" name="week">
-    <option value=""disabled selected>Select a Week</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-    <option value="13">13</option>
-    <option value="14">14</option>
-    <option value="15">15</option>
-    <option value="16">16</option>
-    </select>
-             <input class="input-form" type="datetime-local" name="time" placeholder="Enter Time" required>
-
-
-        <input type="radio" name="place" value="Programming center(A1-***)" required>
-            <label for="">Programming center(A1-***)</label><br>
-
-
-        <input type="radio" id="" name="place" value="Online session" placeholder="Online session" required>   
-         <label for="">Online session</label><br>
-
-
-
-        <input class="input-form" type="text" placeholder="Enter Course" name="course" required>
-
-      <button class="button-form" type="submit" name="submit" value="submit">ADD</button>
-    </div></form>
-  </div> -->
   
 
 <div class = "mobile" style="padding:5%">
@@ -186,32 +123,13 @@
 
 <div class="container">
 
-  <!--  <img class="img-form" 
-      src="css/images/logo.png"
-      alt="image"> -->
+
     <form method="post" class="formcontainer">
     <div class="container-text">
       <h1 class="h-form" style="color:#fff">Add a Session <br>According to your time!</h1>
       <p class="p-form" style="color:#fff">You can schedule your own session with the Programming Center Team, We Encourage students to get help <br>At any Time.</p>
 
-        <select  class="input-form" id="" name="week" id = "week">
-    <option value=""disabled selected>Select a Week</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-    <option value="13">13</option>
-    <option value="14">14</option>
-    <option value="15">15</option>
-    <option value="16">16</option>
-    </select>
-             <input class="input-form" type="datetime-local" name="time" placeholder="Enter Time" id = "time" required>
+             <input class="input-form" type="time" name="time" placeholder="Enter Time" id = "time" required>
 
 
         <input type="radio" name="place" value="Programming center(A1-***)" id = "place" required>

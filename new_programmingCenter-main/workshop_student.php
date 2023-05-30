@@ -161,14 +161,13 @@
       <div class="col-md-4">
       <div class="card card-1">  
       <h3><?php echo $data['title'];?></h3>
-      <p>Detail: <?php echo $data['detail'];?></p>
+      <p>Details: <?php echo $data['detail'];?></p>
       <p>Presenter: <?php echo $data['presenter'];?></p>
       <p>Date and Time: <?php echo $data['date_time'];?></p>
       <p>Place: <?php echo $data['place'];?></p>
       <p>Room: <?php echo $data['room'];?></p>
 
- <!-- <a onclick="alert_enroll_workshop()" class="btn btn-outline-secondary" href="workshop_enroll.php?id=<?php echo $data["id"]; ?>">Enroll</a>
-       -->
+
 </div>
   </div>
 
