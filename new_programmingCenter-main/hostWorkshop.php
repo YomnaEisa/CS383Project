@@ -5,77 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Host Your WorkShop</title>
   <script type="text/javascript" src = https://code.jquery.com/jquery-3.5.1.js></script> 
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
 <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-  <link href="css/styling.css" rel="stylesheet">
-  <style>
-
-.container33 {
-  background-color: $primary-color;
-  width: 80%;
-  height: 100%;
-  position: relative;
-  display: grid;
-  padding: 60px 20px 35px 50px;
-  grid-template-columns: 1fr 2fr;
-  place-items: center;
-  line-height: 1.5;
-}
-
-  .img-form{
-    width: 300px;
-    height: 400px;
-    object-fit: cover;
-    object-position: center;
-    padding: 20px 25px 35px 5px;
-  }
-
-    .h-form {
-      font-size: 1.2rem;
-      color: #1A2250;
-    }
-
-    .p-form {
-      font-size: 14px;
-      color: #3B4169;
-      margin: 10px 0;
-    }
-
-    .input-form , .button-form {
-      width: 100%;
-      border: none;
-      padding: 14px;
-      border-radius: 3px;
-    }
-
-    .input-form {
-      border: 2px solid #DADDEC;
-      margin: 5px 0 10px;
-      font-size: 1rem;
-      color: #656880;
-    }
-
-    .button-form {
-      background-image: linear-gradient(to right, #457c66, #74c4a4);
-      display: block;
-      color: $primary-color;
-      font-size: 1rem;
-      cursor: $cursor;
-      box-shadow: 0 5px 20px #89caff94;
-      transition: box-shadow .3s ease-in-out;
-    }
-
-    .button-form:hover {
-      box-shadow: none;
-    }
-      
-
- 
-    </style>
+<link rel="stylesheet" type="text/css" href="css/StylingSheet.css">
 <script>
 
 </script>
@@ -135,17 +70,23 @@
       <h2 class="h-form" style = "color:#fff">Host Your Own Workshop </h2>
       <p class="p-form" style = "color:#fff">You can schedule your own workshop with the Programming Center Team, <br> We Encourage students to share their knowledge<br>At any Time.</p>
 
-        <input class="input-form" type="text" placeholder="Enter Your Email" name="fromEmail" id ="fromEmail" required>
+        <input class="input-form" type="text" placeholder="Enter Your Email" name="fromEmail" id ="fromEmail" required
+        style = "width: 100%; border: none; padding: 14px; border-radius: 3px; margin-bottom: 1%; margin-top: 1%;">
 
-        <input class="input-form" type="text" placeholder="Enter Your phone" name="phone" id = "phone" required>
+        <input class="input-form" type="text" placeholder="Enter Your phone" name="phone" id = "phone" required
+        style = "width: 100%; border: none; padding: 14px; border-radius: 3px; margin-bottom: 1%; margin-top: 1%;">
 
-        <input class="input-form" type="text" placeholder="Enter A title for your workshop" name="title" id = "title" required>
+        <input class="input-form" type="text" placeholder="Enter A title for your workshop" name="title" id = "title" required
+        style = "width: 100%; border: none; padding: 14px; border-radius: 3px; margin-bottom: 1%; margin-top: 1%;">
 
-        <input class="input-form" type="text" placeholder="Enter Any Details that can help us understand the purpose.." id = "details" name="details" required>
+        <input class="input-form" type="text" placeholder="Enter Any Details that can help us understand the purpose.." id = "details" name="details" required
+        style = "width: 100%; border: none; padding: 14px; border-radius: 3px; margin-bottom: 1%; margin-top: 1%;">
 
-         <input class="input-form" type="datetime-local" name="date_time" placeholder="Enter Time" id = "date_time" required>
+         <input class="input-form" type="datetime-local" name="date_time" placeholder="Enter Time" id = "date_time" required
+         style = "width: 100%; border: none; padding: 14px; border-radius: 3px; margin-bottom: 1%; margin-top: 1%; color: grey;">
 
-        <input class="input-form" type="text" placeholder="Enter A place for your workshop" name="place" id = "place" required>
+        <input class="input-form" type="text" placeholder="Enter A place for your workshop" name="place" id = "place" required
+        style = "width: 100%; border: none; padding: 14px; border-radius: 3px; margin-bottom: 1%; margin-top: 1%;">
 
       <button id = "workshop_host_apply_button" class="read_more_color"
       style = "margin-left: 41%; margin-top:3%;">Apply</button>

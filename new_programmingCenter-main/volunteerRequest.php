@@ -11,69 +11,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
 <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-  <link href="css/styling.css" rel="stylesheet">
-  <style>
-
-.container33 {
-  background-color: $primary-color;
-  width: 80%;
-  height: 100%;
-  position: relative;
-  display: grid;
-  padding: 60px 20px 35px 50px;
-  grid-template-columns: 1fr 2fr;
-  place-items: center;
-  line-height: 1.5;
-}
-
-  .img-form{
-    width: 300px;
-    height: 400px;
-    object-fit: cover;
-    object-position: center;
-    padding: 20px 25px 35px 5px;
-  }
-
-    .h-form {
-      font-size: 1.2rem;
-      color: #1A2250;
-    }
-
-    .p-form {
-      font-size: 14px;
-      color: #3B4169;
-      margin: 10px 0;
-    }
-
-    .input-form , .button-form {
-      width: 100%;
-      border: none;
-      padding: 14px;
-      border-radius: 3px;
-    }
-
-    .input-form {
-      border: 2px solid #DADDEC;
-      margin: 5px 0 10px;
-      font-size: 1rem;
-      color: #656880;
-    }
-
-    .button-form {
-      background-image: linear-gradient(to right, #457c66, #74c4a4);
-      display: block;
-      color: $primary-color;
-      font-size: 1rem;
-      cursor: $cursor;
-      box-shadow: 0 5px 20px #89caff94;
-      transition: box-shadow .3s ease-in-out;
-    }
-
-    .button-form:hover {
-      box-shadow: none;
-    }
-    </style>
-
+<link rel="stylesheet" type="text/css" href="css/StylingSheet.css">
 </head>
 <body>
 
@@ -127,13 +65,17 @@
       <h2 class="h-form" style="color:#ffff">Volunteer Application <br>JOIN US!</h2>
       <p class="p-form" style="color:#ffff">Join Our Programming Center Team, <br> We Encourage students to participatns who support <br>our mission.</p>
 
-        <input class="input-form" type="text" placeholder="Enter A Course Code You'd Like to Teach" id = "CourseCode" name="CourseCode" required>
+        <input class="input-form" type="text" placeholder="Enter A Course Code You'd Like to Teach" id = "CourseCode" name="CourseCode" required
+        style = "width: 100%; border: none; padding: 14px; border-radius: 3px; margin-bottom: 1%; margin-top: 1%;">
 
-        <input class="input-form" type="text" placeholder="Enter Your Email For Contact" id = "fromEmail" name="fromEmail" required>
+        <input class="input-form" type="text" placeholder="Enter Your Email For Contact" id = "fromEmail" name="fromEmail" required
+        style = "width: 100%; border: none; padding: 14px; border-radius: 3px; margin-bottom: 1%; margin-top: 1%;">
 
-        <input class="input-form" type="text" placeholder="Enter Your Phone Number" id = "phone" name="phone" required>
+        <input class="input-form" type="text" placeholder="Enter Your Phone Number" id = "phone" name="phone" required
+        style = "width: 100%; border: none; padding: 14px; border-radius: 3px; margin-bottom: 1%; margin-top: 1%;">
 
-        <input class="input-form" type="text" placeholder="Enter The grade You score in The selected course.." id = "grade" name="grade" required>
+        <input class="input-form" type="text" placeholder="Enter The grade You score in The selected course.." id = "grade" name="grade" required
+        style = "width: 100%; border: none; padding: 14px; border-radius: 3px; margin-bottom: 1%; margin-top: 1%;">
 
       <button class="read_more_color"
       style="margin-left:41%; margin-top: 1%" id = "volunteer_apply_button">Apply</button>

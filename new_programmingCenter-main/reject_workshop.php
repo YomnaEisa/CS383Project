@@ -5,7 +5,6 @@ session_start();
 
 $conn = $user->connect();
 
-//$sql = "DELETE FROM workshoprequest WHERE ID =  '" . $_GET["ID"] . "'";
 $query = "select * from `workshoprequest`";
 
     $sql = $user->delete_workshop_req($query);
