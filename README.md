@@ -1,9 +1,9 @@
-# CS383Project
+# Programming Center Website 
 
 Programming Center Website README
 
 Introduction
-Many Computer Science Engineering (CSE) students at Yanbu industrial College (YIC) face difficulties in some subjects. To address this issue, the CSE department has established
+Many Computer Science Engineering (CSE) students at Yanbu Industrial College (YIC) face difficulties in some subjects. To address this issue, the CSE department has established
 a Programming Center that provides students with extra help sessions outside of class time. However, the current booking process for
 the programming center is inefficient, as students have to fill out a Google form for each session and provide academic information
 for each appointment. To improve the experience for students and teachers, our team has developed a website for the Programming Center 
@@ -13,7 +13,7 @@ and CSE course resources.
 Problem
 Students at YIC face a problem when trying to use the programming center services.
 They don't have a clear understanding of how it works or what the programming center can provide to help them with their studies. 
-The current process uses Google forms, which can be confusing and time-consuming for students, and many students face issues when
+The current process uses Google Forms, which can be confusing and time-consuming for students, and many students face issues when
 trying to view or book sessions.
 
 Solution
